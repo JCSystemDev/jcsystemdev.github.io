@@ -1,0 +1,97 @@
+@font-face {
+    font-family: "8-bit-hud";
+    src: url("8-bit-hud.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "Cyberfall Italic";
+    src: url("Cyberfall Italic.otf") format('truetype');
+}
+
+.titleheader{
+    font-family: "Cyberfall Italic";
+}
+
+.titleseccion{
+    font-family: "8-bit-hud";
+    font-size: large;
+}
+
+.titlefooter{
+    font-family: "Cyberfall Italic";
+    font-size: x-large;
+}
+
+div.row{
+    margin-right: 0px;
+}
+
+div.container-fluid{
+    padding-right: 0px;
+}
+
+ul {
+    list-style: none;
+}
+
+h5{
+    font-family: "Cyberfall Italic";
+    font-size: xx-large;
+}
+
+h6{
+    font-family: "Cyberfall Italic";
+    font-size: large;
+}
+
+.lateral{
+    background-color: #010409 !important;
+
+}
+
+.header{
+    border: darkgrey 1px solid;
+}
+
+.footer{
+    border: darkgrey 1px solid;
+}
+
+article{
+    border: darkgrey 1px solid;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.project{
+    background-color: #010409 !important;
+}
+
+.list-group-item{
+    background-color: black;
+}
+
+.enlace {
+    background-color: black;
+    width: 100px;
+    height: 100px;
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.enlace:hover {
+    opacity: 0.7;
+    transform: scale(1.1);
+}
+
+p{
+    font-size: x-large;
+    font-family: "Cyberfall Italic";
+}
+
+a{
+    font-family: "Cyberfall Italic";
+    font-size: x-large;
+}
+
+
+
