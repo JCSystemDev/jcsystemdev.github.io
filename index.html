@@ -132,23 +132,12 @@
                                 <div class="player container-fluid">
                                     <div class="imgbox">
                                         <img class="mt-4 mb-5 img-fluid" width="300" src="Player.gif">
-                                        <ul class="container-fluid">
-                                            <li>
-                                                <audio src="futurepop2.mp3" type="audio/mp3" controls ></audio>
-                                            </li>
-                                            <li>
-                                                <audio src="futurepop.mp3" type="audio/mp3" controls ></audio>
-                                            </li>
-                                            <li>
-                                                <audio src="ebm.mp3" type="audio/mp3" controls ></audio>
-                                            </li>
-                                            <li>
-                                                <audio src="circus.mp3" type="audio/mp3" controls ></audio>
-                                            </li>
-                                            <li>
-                                                <audio src="darksynth.mp3" type="audio/mp3" controls ></audio>
-                                            </li>
-                                        </ul>
+                                        <div id="reproductorBox"></div>
+                                            <select id = "selectTrack" multiple onchange="cambiarTrack(this.options[this.selectedIndex]);">
+                                                <option value="../music/take-on-me.mp3">Ah Ah - Take on me</option>
+                                                <option value="../music/dust-in-the-wind.mp3">Kansas - Dust in the wind</option>
+                                                <option value="../music/how-deep-is-your-love.mp3">Bee Geees - How deep is your love</option>
+                                            </select>  
                                     </div>
                                 </div>
                             </article>
@@ -163,6 +152,38 @@
             </footer>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+        <script>
+            function cambiarTrack(track) {
+               var value =  track.getAttribute("value")
+               viejo_audio = document.getElementById("reproductor")
+               audio_padre = viejo_audio.parentNode
+               audio_padre.removeChild(viejo_audio)
+               nuevo_audio = document.createElement("audio")
+               nuevo_audio.setAttribute("id","reproductor")
+               nuevo_audio.setAttribute("controls", "controls")
+              // nuevo_audio.setAttribute("autoplay", "autoplay")
+               source = document.createElement("source")
+               source.setAttribute("src", value)
+               source.setAttribute("type", "audio/mpeg")
+               source.setAttribute("id", "reproductorSource")
+               nuevo_audio.appendChild(source)
+               audio_padre.appendChild(nuevo_audio)}
+            function cargarReproductor() {
+                     var select = document.getElementById("selectTrack")
+                     var value = select.options[0].getAttribute("value")
+               nuevo_audio = document.createElement("audio")
+               nuevo_audio.setAttribute("id","reproductor")
+               nuevo_audio.setAttribute("controls", "controls")       
+               source = document.createElement("source")
+               source.setAttribute("src", value)
+               source.setAttribute("type", "audio/mpeg")
+               source.setAttribute("id", "reproductorSource")
+               nuevo_audio.appendChild(source)
+               padre = document.getElementById("reproductorBox")
+               padre.appendChild(nuevo_audio)
+            }
+        </script>
+        <script>cargarReproductor();</script>
     </div>
     </body>
 </html>
